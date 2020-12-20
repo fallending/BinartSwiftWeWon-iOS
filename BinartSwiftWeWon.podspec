@@ -31,19 +31,13 @@ TODO: Add long description of the pod here.
   s.requires_arc     = true
   s.swift_version    = '5.0'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
   s.pod_target_xcconfig   = {
       "SWIFT_VERSION" => "5.0",
   }
   s.ios.resource_bundle = { 'MessageKitAssets' => 'BinartSwiftWeWon/Assets/MessageKitAssets.bundle/Images' }
 
-  
-  # s.dependency 'MessageKit'
+  s.dependency 'HandyJSON'
+  s.dependency 'GKNavigationBarSwift'
   s.dependency 'Kingfisher'
-  s.dependency 'SwipeCellKit'
-  s.dependency 'SnapKit'
-  s.dependency 'UITableView+FDTemplateLayoutCell'
-  s.dependency 'SVGKit'
-  s.dependency 'InputBarAccessoryView', '~> 4.3.0'
-  s.dependency 'YBImageBrowser', '~> 3.0.9'
 end

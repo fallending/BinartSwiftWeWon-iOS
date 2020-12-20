@@ -28,19 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        BAWeWon.themeColor = UIColor(red: 42/255, green: 43/255, blue: 44/255, alpha: 1.0)
-        
-        let settings = ["Text Messages", "AttributedText Messages", "Photo Messages", "Video Messages", "Audio Messages", "Emoji Messages", "Location Messages", "Url Messages", "Phone Messages", "ShareContact Messages"]
-        
-        for setting in settings {
-            UserDefaults.standard.set(true, forKey: setting)
-        }
-        
-        UserDefaults.standard.setMockMessages(count: 1000)
-        UserDefaults.standard.synchronize()
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = NavVC(rootViewController: MainVC())
+//        window?.rootViewController = NavVC(rootViewController: MainVC())
         window?.makeKeyAndVisible()
         
         return true
