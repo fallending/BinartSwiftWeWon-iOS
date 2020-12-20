@@ -18,7 +18,6 @@ extension UIImage {
         }
         else {
             // Gradient color
-            var location: CGFloat = 0
             var locations: [CGFloat] = []
             
             for (index, _) in colors.enumerated() {

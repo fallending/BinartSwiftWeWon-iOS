@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'BinartSwiftWeWon'
   s.version          = '0.3.0'
-  s.summary          = 'A short description of BinartSwiftWeWon.'
+  s.summary          = 'Swift app dependencies.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Swift app dependencies: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/fallending/BinartSwiftWeWon-iOS'
@@ -35,7 +35,6 @@ TODO: Add long description of the pod here.
   s.pod_target_xcconfig   = {
       "SWIFT_VERSION" => "5.0",
   }
-  s.ios.resource_bundle = { 'MessageKitAssets' => 'BinartSwiftWeWon/Assets/MessageKitAssets.bundle/Images' }
 
   s.dependency 'HandyJSON'
   s.dependency 'GKNavigationBarSwift'

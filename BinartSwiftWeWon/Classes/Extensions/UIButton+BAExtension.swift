@@ -28,10 +28,10 @@ extension UIButton {
     func setGradientBackgroundColors(_ colors: [UIColor], direction: BADirection) {
         assert(colors.count>1)
         
-        var highlightedColors: [UIColor] = []
-        colors.forEach {
-            highlightedColors.append($0.transparenter())
-        }
+        let highlightedColors: [UIColor] = []
+//        colors.forEach {
+//            highlightedColors.append($0.transparenter())
+//        }
         setGradientBackgroundColors(colors, direction: direction, for: .normal)
         setGradientBackgroundColors(highlightedColors, direction: direction, for: .highlighted)
     }
