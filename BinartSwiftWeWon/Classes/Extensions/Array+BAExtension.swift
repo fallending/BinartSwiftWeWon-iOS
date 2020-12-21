@@ -1,6 +1,6 @@
 import Foundation
 
-extension Array {
+public extension Array {
     
     /// 数组是否包含字符串
     func ba_containsString (aString: String) -> Bool {

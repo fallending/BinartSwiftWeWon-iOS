@@ -2,7 +2,7 @@ import UIKit
 
 typealias ActionCompletionFunc<T> = (_ action: T, _ res: Any?, _ err: Int?, _ msg: String?) -> Void
 
-public class ViewModelV2<T: ViewAction>: NSObject { // 继承自 NSObject，方便它的派生类实现@objc protocol
+open class ViewModelV2<T: ViewAction>: NSObject { // 继承自 NSObject，方便它的派生类实现@objc protocol
     
     var isMock: Bool?
     var title: String?
@@ -10,7 +10,7 @@ public class ViewModelV2<T: ViewAction>: NSObject { // 继承自 NSObject，方�
     var observer: ActionCompletionFunc<T>?
     
     //
-    required override init () {
+    required public override init () {
         super.init()
         
         onCreate()

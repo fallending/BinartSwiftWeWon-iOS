@@ -3,7 +3,7 @@ import UIKit
 import GKNavigationBarSwift
 
 /// 范型继承，下一级继承需要特化（终止范型链）
-class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureRecognizerDelegate {
+open class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     
@@ -27,7 +27,7 @@ class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureR
     
     // MARK: - View Lifecycle
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         setupDefault()
@@ -39,7 +39,7 @@ class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureR
         viewModel?.onLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.isHidden = prefersNavigationBarHidden
@@ -47,7 +47,7 @@ class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureR
         viewModel.willAppear()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // 侧滑配置
@@ -56,13 +56,13 @@ class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureR
         viewModel.didAppear()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         viewModel.willDisappear()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         self.navigationController?.navigationBar.isHidden = !prefersNavigationBarHidden
@@ -76,11 +76,11 @@ class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureR
         return false;
     }
     
-    override var prefersStatusBarHidden: Bool {
+    open override var prefersStatusBarHidden: Bool {
         return self.gk_statusBarHidden
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
         return self.gk_statusBarStyle
     }
     
@@ -126,7 +126,7 @@ class ViewCtrlV2<A: ViewAction, T: ViewModelV2<A>>: UIViewController, UIGestureR
     
     // MARK: - UIGestureRecognizerDelegate
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 

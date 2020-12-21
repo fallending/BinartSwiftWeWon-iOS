@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - 取值
 
-extension Dictionary {
+public extension Dictionary {
     func ba_string(for key: String) -> String? {
         if let dict = self as? [String: Any] {
             return (dict[key] as? String) ?? nil
@@ -20,7 +20,7 @@ extension Dictionary {
 
 // MARK: - 转化
 
-extension Dictionary {
+public extension Dictionary {
     func ba_toQuery () -> String {
         var output: String = ""
         for (key,value) in self {

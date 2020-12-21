@@ -1,6 +1,6 @@
 import Foundation
 
-extension String {
+public extension String {
     func ba_isLikePhoneNumber() -> Bool {
         let p = "^1[0-9]{10}$"
         

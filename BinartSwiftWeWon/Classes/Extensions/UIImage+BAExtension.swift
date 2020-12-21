@@ -1,6 +1,6 @@
 import Foundation
 
-extension UIImage {
+public extension UIImage {
     convenience init?(size: CGSize, direction: BADirection, colors: [UIColor]) {
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         

@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     /// let color = UIColor(red: 0xFF, green: 0xFF, blue: 0xFF)
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

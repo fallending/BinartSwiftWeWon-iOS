@@ -1,6 +1,6 @@
 import Foundation
 
-public class ViewModel: NSObject { // 继承自 NSObject，方便它的派生类实现@objc protocol
+open class ViewModel: NSObject { // 继承自 NSObject，方便它的派生类实现@objc protocol
     
     var isMock: Bool?
     var title: String?
@@ -9,7 +9,7 @@ public class ViewModel: NSObject { // 继承自 NSObject，方便它的派生类
     
     //
 
-    required override init () {
+    required public override init () {
         super.init()
     
         onCreate()
