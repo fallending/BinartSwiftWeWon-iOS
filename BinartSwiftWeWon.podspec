@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BinartSwiftWeWon'
-  s.version          = '0.3.2'
+  s.version          = '0.3.3'
   s.summary          = 'Swift app dependencies.'
 
 # This description is used to generate tags and improve search results.
