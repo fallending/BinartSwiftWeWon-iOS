@@ -2,10 +2,10 @@ import Foundation
 
 open class ViewModel: NSObject { // 继承自 NSObject，方便它的派生类实现@objc protocol
     
-    var isMock: Bool?
-    var title: String?
+    public var isMock: Bool?
+    public var title: String?
     
-    var onDataUpdatedHandler: CompletionFunc?
+    public var onDataUpdatedHandler: CompletionFunc?
     
     //
 
@@ -19,86 +19,42 @@ open class ViewModel: NSObject { // 继承自 NSObject，方便它的派生类�
         onDestory()
     }
     
-    //
-    
-    @available(*, deprecated, message: "Use onload instead")
-    public func setup() {
-        
-    }
-    
-    @available(*, deprecated, message: "Use onDestory instead")
-    public func setdown () {
-        
-    }
-    
-    public func preLoad () {}
+    open func preLoad () {}
     
     // MARK: = VS's Lifecycle
     
-    public func onCreate () {} // FIXME: -> onViewCreate，以下同上
-    public func onLoad () {}
+    open func onCreate () {} // FIXME: -> onViewCreate，以下同上
+    open func onLoad () {}
     
-    public func willAppear() {}
-    public func didAppear () {}
+    open func willAppear() {}
+    open func didAppear () {}
     
-    public func willDisappear () {}
-    public func didDisappear () {}
+    open func willDisappear () {}
+    open func didDisappear () {}
     
-    public func onDestory () {}
+    open func onDestory () {}
     
     // MARK: = Action handler
     
-    final func handle(_ action: ViewAction) -> Void {
+    final public func handle(_ action: ViewAction) -> Void {
         handle(action, params: nil, callback: {_,_,_ in })
     }
     
-    final func handle(_ action: ViewAction, params: Any?) -> Void {
+    final public func handle(_ action: ViewAction, params: Any?) -> Void {
         handle(action, params: params, callback: {_,_,_ in })
     }
     
-    final func handle(_ action: ViewAction, callback: @escaping CompletionFunc) -> Void {
+    final public func handle(_ action: ViewAction, callback: @escaping CompletionFunc) -> Void {
         handle(action, params: nil, callback: callback)
     }
     
-    func handle(_ action: ViewAction, params: Any?, callback: @escaping CompletionFunc) -> Void {
+    open func handle(_ action: ViewAction, params: Any?, callback: @escaping CompletionFunc) -> Void {
         
     }
     
     // MARK: = Data Observer
     
-    func observe(_ action: ViewAction, callback: @escaping CompletionFunc) {
-        
-    }
-    
-    // MARK: = UITableView DataSouce
-    
-    func modelWithIndexPath(indexPath: IndexPath) -> Any {
-        return ""
-    }
-    
-    func dataModelWithIndexPath(indexPath: IndexPath) -> Any {
-        return ""
-    }
-    
-    func numberOfSections() -> Int {
-        return 0
-    }
-    
-    func numberOfItemsInSection(section: Int) -> Int {
-        return 0
-    }
-    
-    func titleForHeaderInSection(section: Int) -> String? {
-        return ""
-    }
-    
-    func sectionIndexTitles() -> [String]? {
-        return []
-    }
-    
-    // MARK: =
-    
-    func noop() {
+    open func observe(_ action: ViewAction, callback: @escaping CompletionFunc) {
         
     }
 }

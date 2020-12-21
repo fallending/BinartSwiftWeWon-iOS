@@ -13,7 +13,7 @@ public enum BADirection {
 }
 
 public extension UIButton {
-    public class func TextButton (title: String, action: Selector, target: Any, font: CGFloat, background: UIColor) -> UIButton {
+    class func TextButton (title: String, action: Selector, target: Any, font: CGFloat, background: UIColor) -> UIButton {
         let b = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40));
         b.setTitleColor(UIColor.white, for:.normal);
         b.setTitle(title, for: .normal);
